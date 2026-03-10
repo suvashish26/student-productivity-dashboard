@@ -5,9 +5,9 @@ function App() {
     <>
       <Navbar />
 
-      <div className="p-6">
-        <h2 className="text-2xl font-semibold">Dashboard</h2>
-      </div>
+      <main className="max-w-7xl mx-auto p-6">
+        <h1 className="text-3xl font-semibold">Dashboard</h1>
+      </main>
     </>
   )
 }
