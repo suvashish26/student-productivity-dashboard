@@ -8,18 +8,25 @@ function AddEntry() {
   const [date, setDate] = useState("")
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+  e.preventDefault()
 
-    const entry = {
-      study,
-      sleep,
-      attendance,
-      homework,
-      date
-    }
-
-    console.log(entry)
+  const entry = {
+    study,
+    sleep,
+    attendance,
+    homework,
+    date
   }
+
+  const existingEntries =
+    JSON.parse(localStorage.getItem("entries")) || []
+
+  const updatedEntries = [...existingEntries, entry]
+
+  localStorage.setItem("entries", JSON.stringify(updatedEntries))
+
+  console.log(updatedEntries)
+}
 
   return (
     <div className="max-w-xl mx-auto mt-10">
